@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Wine, so fine</h1>
+    <p class="lead">Welcome to our online wine shop. Stay around and check why everyone who comes once always come back!</p>
+    <picture></picture>
+</div>
+
+<div class="container body-content">
+    <div class="row">
+        <div class="col-md-12">
+            <img src="~/Content/3.png" />
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Log in</h2>
+        <p>
+            You must be logged in to see prices!
+        </p>
+
+        <p><span class="glyphicon glyphicon-user"></span>@Html.ActionLink("Log in", "Login", "Account", null, new { @class = " btn btn-default" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Register</h2>
+        <p>
+            Don't have an account yet? Make one right now!
+        </p>
+        <p><span class="glyphicon glyphicon-pencil"></span> @Html.ActionLink("Register", "Register", "Account", null, new { @class = "btn btn-default" })</p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Popular wines</h2>
+        <p>
+            See our top purchased products!
+        </p>
+        <p><span class="glyphicon glyphicon-heart-empty"></span> @Html.ActionLink("Popular", "Popular", "Wines", null, new { @class = "btn btn-default" })</p>
+    </div>
+
+</div>

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<WineSoFine.Models.Wine>
+@{
+    ViewBag.Title = "Wines";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Wines</h2>
+<p>
+    @Html.ActionLink("New Wine", "New", "Wines", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Wines</th>
+            <th>Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var wine in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(wine.Name, "Edit", "Wines", new { id = wine.Id }, null)</td>
+                <td>@wine.Type.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+

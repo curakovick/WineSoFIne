@@ -1,0 +1,29 @@
+﻿@model WineSoFine.ViewModels.WineFormViewModel
+@{
+    ViewBag.Title = Model.Name;
+    
+}
+
+<h2>@Model.Name</h2>
+
+@using (Html.BeginForm("Save", "Movies"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Wine.Name)
+        @Html.TextBoxFor(m => m.Wine.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Wine.ProducedDate)
+        @Html.TextBoxFor(m => m.Wine.ProducedDate, "{0:d MMM yyyy}", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Wine.TypeId)
+        @Html.DropDownListFor(m => m.Wine.TypeId, new SelectList(Model.Types, "Id", "Name"), "", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Wine.NumberInStock)
+        @Html.TextBoxFor(m => m.Wine.NumberInStock, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.Wine.Id)
+    <button type="submit" class="btn btn-primary">Save</button>
+}
